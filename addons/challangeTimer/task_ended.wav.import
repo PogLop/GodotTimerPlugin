@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/task_ended.wav-ce8597d5b1987dd045f00cf4a6c1b5ac.sample"
+
+[deps]
+
+source_file="res://addons/challangeTimer/task_ended.wav"
+dest_files=[ "res://.import/task_ended.wav-ce8597d5b1987dd045f00cf4a6c1b5ac.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

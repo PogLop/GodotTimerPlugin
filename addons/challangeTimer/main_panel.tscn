@@ -1,0 +1,63 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://addons/challangeTimer/task_ended.wav" type="AudioStream" id=1]
+[ext_resource path="res://addons/challangeTimer/timer.gd" type="Script" id=2]
+
+[node name="main_panel" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 36.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="title" type="Label" parent="VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 14.0
+text = "Godot Challange Timer"
+align = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 18.0
+margin_right = 1024.0
+margin_bottom = 34.0
+
+[node name="tsk_time" type="Label" parent="VBoxContainer/HBoxContainer2"]
+margin_top = 1.0
+margin_right = 114.0
+margin_bottom = 15.0
+text = "Time (0) minute/s"
+
+[node name="tsk_time_slider" type="HSlider" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 118.0
+margin_right = 1024.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+max_value = 60.0
+
+[node name="start_timer" type="Button" parent="VBoxContainer"]
+margin_top = 38.0
+margin_right = 1024.0
+margin_bottom = 58.0
+text = "Start timer"
+
+[node name="stop_alarm" type="Button" parent="VBoxContainer"]
+margin_top = 62.0
+margin_right = 1024.0
+margin_bottom = 82.0
+text = "Stop alarm"
+
+[node name="reminder_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = -5.0
+
+[connection signal="pressed" from="VBoxContainer/start_timer" to="." method="_on_add_tsk_pressed"]
+[connection signal="pressed" from="VBoxContainer/stop_alarm" to="." method="_on_stop_alarm_pressed"]
